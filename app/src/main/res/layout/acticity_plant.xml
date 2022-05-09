@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".PlantActivity">
+
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sky_green">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="@string/app_name"
+                app:titleTextColor="@color/black"
+                app:menu="@menu/menu"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:elevation="0dp"
+                android:background="@android:color/transparent"/>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintMainContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--upper container for plant-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/containerTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/img_screen2_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/containerPlantType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <TextView
+                            android:id="@+id/txtViewPlantType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Air Purifier"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imgDogFootprint"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="15dp"
+                            android:src="@drawable/img_dog_footprint"
+                            app:layout_constraintStart_toEndOf="@id/txtViewPlantType"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/txtViewplantName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/philosopher"
+                        android:text="Watermalon\nPeperomia"
+                        android:textColor="@color/black"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/containerPlantType" />
+
+                    <!--text view price-->
+                    <TextView
+                        android:id="@+id/txtViewPriceName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="30dp"
+                        android:text="PRICE"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtViewplantName" />
+                    <TextView
+                        android:id="@+id/txtViewPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="$500"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtViewPriceName"/>
+
+                    <!--text view size-->
+                    <TextView
+                        android:id="@+id/txtViewSizeName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="SIZE"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtViewPrice" />
+                    <TextView
+                        android:id="@+id/txtViewSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="5' h"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtViewSizeName"/>
+
+                    <!--cart and like button-->
+                    <ImageView
+                        android:id="@+id/imgViewCart"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="50dp"
+                        android:elevation="8dp"
+                        android:src="@drawable/ic_cart"
+                        app:layout_constraintTop_toBottomOf="@id/txtViewSize"
+                        app:layout_constraintStart_toStartOf="parent"/>
+                    <ImageView
+                        android:id="@+id/imgViewHeart"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/img_black_heart"
+                        app:layout_constraintStart_toEndOf="@id/imgViewCart"
+                        app:layout_constraintTop_toBottomOf="@id/txtViewSize" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLargePlant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0">
+
+                        <ImageView
+                            android:id="@+id/imgLargePlant"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/img_plant2"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                        <ImageView
+                            android:id="@+id/imgBasePot"
+                            android:layout_width="82dp"
+                            android:layout_height="82dp"
+                            android:elevation="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.51"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.86" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:id="@+id/imgSliderIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="140dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/img_slide"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--wheel container-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/containerWheel"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="parent"
+                    android:layout_marginVertical="70dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/wheel_background"
+                        android:adjustViewBounds="true"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/wheel_green_line"
+                        android:adjustViewBounds="true"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                    <com.ogaclejapan.arclayout.ArcLayout
+                        android:id="@+id/arc_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:arc_axisRadius="165dp"
+                        app:arc_freeAngle="false"
+                        app:arc_origin="right"
+                        app:arc_radius="210dp"
+                        app:arc_reverseAngle="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:src="@drawable/wheel_pot2"
+                            app:arc_origin="center" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:src="@drawable/wheel_pot3"
+                            app:arc_origin="center" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:src="@drawable/wheel_pot4"
+                            app:arc_origin="center" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:src="@drawable/wheel_pot0"
+                            app:arc_origin="center" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:src="@drawable/wheel_pot5"
+                            app:arc_origin="center" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:src="@drawable/wheel_pot6"
+                            app:arc_origin="center" />
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:src="@drawable/wheel_pot7"
+                            app:arc_origin="center" />
+
+
+                    </com.ogaclejapan.arclayout.ArcLayout>
+
+                    <!--pot color selector-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintColorSelector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="250dp"
+                        android:background="@drawable/pot_color_selector_background"
+                        android:layout_marginEnd="15dp"
+                        android:padding="8dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <ImageView
+                            android:id="@+id/img_pot_color_light_soil"
+                            android:layout_width="@dimen/pot_color_selector_size"
+                            android:layout_height="@dimen/pot_color_selector_size"
+                            android:src="@drawable/img_pot_color_light_soil"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                        <ImageView
+                            android:id="@+id/img_pot_color_soil"
+                            android:layout_width="@dimen/pot_color_selector_size"
+                            android:layout_height="@dimen/pot_color_selector_size"
+                            android:layout_marginTop="@dimen/pot_color_selector_margin"
+                            android:src="@drawable/img_pot_color_soil"
+                            app:layout_constraintTop_toBottomOf="@+id/img_pot_color_light_soil"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                        <ImageView
+                            android:id="@+id/img_pot_color_light_green"
+                            android:layout_width="@dimen/pot_color_selector_size"
+                            android:layout_height="@dimen/pot_color_selector_size"
+                            android:layout_marginTop="@dimen/pot_color_selector_margin"
+                            android:src="@drawable/img_pot_color_light_green"
+                            app:layout_constraintTop_toBottomOf="@+id/img_pot_color_soil"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                        <ImageView
+                            android:id="@+id/img_pot_color_green"
+                            android:layout_width="@dimen/pot_color_selector_size"
+                            android:layout_height="@dimen/pot_color_selector_size"
+                            android:layout_marginTop="@dimen/pot_color_selector_margin"
+                            android:src="@drawable/img_pot_color_green"
+                            app:layout_constraintTop_toBottomOf="@+id/img_pot_color_light_green"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                        <ImageView
+                            android:id="@+id/img_pot_color_red"
+                            android:layout_width="@dimen/pot_color_selector_size"
+                            android:layout_height="@dimen/pot_color_selector_size"
+                            android:layout_marginTop="@dimen/pot_color_selector_margin"
+                            android:src="@drawable/img_pot_color_red"
+                            app:layout_constraintTop_toBottomOf="@+id/img_pot_color_green"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                        <ImageView
+                            android:id="@+id/img_pot_color_mate_soil"
+                            android:layout_width="@dimen/pot_color_selector_size"
+                            android:layout_height="@dimen/pot_color_selector_size"
+                            android:layout_marginTop="@dimen/pot_color_selector_margin"
+                            android:src="@drawable/img_pot_color_mate_soil"
+                            app:layout_constraintTop_toBottomOf="@+id/img_pot_color_red"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                        <ImageView
+                            android:id="@+id/img_pot_color_blue"
+                            android:layout_width="@dimen/pot_color_selector_size"
+                            android:layout_height="@dimen/pot_color_selector_size"
+                            android:layout_marginTop="@dimen/pot_color_selector_margin"
+                            android:src="@drawable/img_pot_color_blue"
+                            app:layout_constraintTop_toBottomOf="@+id/img_pot_color_mate_soil"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/txtViewGrant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Grant"
+                        android:textColor="@color/green"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/constraintColorSelector"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--Bottom container for plant-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/containerBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/containerTop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/txtOverView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Overview"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!--overView of plant-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/containerWater"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="10dp"
+                        app:layout_constraintEnd_toStartOf="@+id/containerSunLight"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtOverView">
+
+                        <ImageView
+                            android:id="@+id/imgWaterIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/img_water"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtAmountOfWater"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="250ml"
+                            android:textColor="@color/green"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/imgWaterIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtWater"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Water"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toEndOf="@id/imgWaterIcon"
+                            app:layout_constraintTop_toBottomOf="@id/txtAmountOfWater" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/containerSunLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="10dp"
+                        app:layout_constraintEnd_toStartOf="@+id/containerFertilizer"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/containerWater"
+                        app:layout_constraintTop_toBottomOf="@id/txtOverView">
+
+                        <ImageView
+                            android:id="@+id/imgSunLightIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/img_sunlight"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtAmountOfSunLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="35-40%"
+                            android:textColor="@color/green"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/imgSunLightIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtSunLight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Light"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toEndOf="@id/imgSunLightIcon"
+                            app:layout_constraintTop_toBottomOf="@id/txtAmountOfSunLight" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/containerFertilizer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/containerSunLight"
+                        app:layout_constraintTop_toBottomOf="@id/txtOverView">
+
+                        <ImageView
+                            android:id="@+id/imgFertilizerIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/img_fertilizer"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtAmountOfFertilizer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="250gm"
+                            android:textColor="@color/green"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/imgFertilizerIcon"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtFertilizer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="FERTILIZER"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toEndOf="@id/imgFertilizerIcon"
+                            app:layout_constraintTop_toBottomOf="@id/txtAmountOfFertilizer" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--plant Bio Detail-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/containerPlantDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/containerFertilizer">
+
+                        <TextView
+                            android:id="@+id/txtViewPlantBio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Plant Bio"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/philosopher"
+                            android:text="@string/plant_detail"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/txtViewPlantBio" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--plant scanner-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/containerPlantScanner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:padding="20dp"
+                        android:background="@drawable/img_plant_scanner_background"
+                        app:layout_constraintTop_toBottomOf="@id/containerPlantDetail"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <TextView
+                            android:id="@+id/txtPlantScannerTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="That very plant?"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/philosopher"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/txtPlantScannerDesc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/thatVeryPlantDetail"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            app:layout_constraintTop_toBottomOf="@id/txtPlantScannerTitle"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <Button
+                            android:id="@+id/btnScanNow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Scan Now"
+                            android:textSize="16sp"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
+                            android:textAllCaps="false"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/pot_color_selector_background"
+                            app:layout_constraintTop_toBottomOf="@id/txtPlantScannerDesc"
+                            app:layout_constraintStart_toStartOf="parent"/>
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginBottom="20dp"
+                            android:src="@drawable/img_plant_scanner"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

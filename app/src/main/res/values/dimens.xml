@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pot_color_selector_margin">12dp</dimen>
+    <dimen name="pot_color_selector_size">22dp</dimen>
+    <dimen name="selected_pot_color_selector_size">30dp</dimen>
+</resources>
